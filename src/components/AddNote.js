@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const AddNote = ({ handleAddNote }) => {
     const [noteText, setNoteText] = useState('');
-    const characterLimit = 200;
+    const characterLimit = 250;
     
     const handleChange = (event) => {
         if(characterLimit - event.target.value.length >= 0) {
@@ -11,7 +11,7 @@ const AddNote = ({ handleAddNote }) => {
     }
 
     const handleSaveClick = () => {
-        if(noteText.trim().length > 0) { //trim ignores blank spaces before and after string
+        if(noteText.trim().length > 0) {
             handleAddNote(noteText);
             setNoteText('');
         }
